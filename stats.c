@@ -5,8 +5,8 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     s.average = 0;
     s.min = 0;
     s.max = 0;
-    int i,maximum,minimum;
-    float sum=0.0;
+    int i;
+    float sum=0.0,maximum,minimum;
     /* maximum in the given number set */
     maximum=numberset[0];
     for(i=1;i<setlength;i++)
