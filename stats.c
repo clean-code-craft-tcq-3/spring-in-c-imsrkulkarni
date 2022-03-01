@@ -5,24 +5,28 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     s.average = 0;
     s.min = 0;
     s.max = 0;
-    int i,j;
-    float temp=0.0,temp1=0.0,sum=0.0;
-    /* Sorting the given number set */
-    for(i=0;i<setlength-1;i++)
+    int i,maximum,minimum;
+    float sum=0.0;
+    /* maximum in the given number set */
+    maximum=numberset[0];
+    for(i=0;i<setlength;i++)
     {
-        for(j=i+1;j<setlength;j++)
-        {
-            if(numberset[i]>numberset[j])
-            {
-                temp=numberset[i];
-                temp1=numberset[j];
-                numberset[j]=temp;
-                numberset[i]=temp1;
-            }
-         }
+       if(numberset[i]>maximum)
+       {
+           maximum=numberset[i];
+       }
     }
-    s.min=numberset[0];
-    s.max=numberset[setlength-1];
+    /* minimum in the given number set */
+    minimum=numberset[0];
+    for(i=0;i<setlength;i++)
+    {
+       if(numberset[i]<minimum)
+       {
+           minimum=numberset[i];
+       }
+    }
+    s.min=minimum;
+    s.max=maximum;
     
     /* Finding Average of the given number set */
     for(i=0;i<setlength;i++)
