@@ -6,7 +6,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     s.min = 0;
     s.max = 0;
     int i,j;
-    float temp=0.0,sum=0.0;
+    float temp=0.0,temp1=0.0,sum=0.0;
     /* Sorting the given number set */
     for(i=0;i<setlength-1;i++)
     {
@@ -15,8 +15,9 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
             if(numberset[i]>numberset[j])
             {
                 temp=numberset[i];
-                numberset[i]=numberset[j];
+                temp1=numberset[j];
                 numberset[j]=temp;
+                numberset[i]=temp1;
             }
          }
     }
