@@ -7,34 +7,38 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     s.max = 0;
     int i;
     float sum=0.0,maximum,minimum;
-    /* maximum in the given number set */
-    maximum=numberset[0];
-    for(i=1;i<setlength;i++)
-    {
-       if(numberset[i]>maximum)
-       {
-           maximum=numberset[i];
-       }
-    }
-    /* minimum in the given number set */
-    minimum=numberset[0];
-    for(i=1;i<setlength;i++)
-    {
-       if(numberset[i]<minimum)
-       {
-           minimum=numberset[i];
-       }
-    }
-    s.min=minimum;
-    s.max=maximum;
     
-    /* Finding Average of the given number set */
-    for(i=0;i<setlength;i++)
+    if(setLength>0)
     {
-        sum+=numberset[i];
+        /* maximum in the given number set */
+        maximum=numberset[0];
+        for(i=1;i<setlength;i++)
+        {
+            if(numberset[i]>maximum)
+            {
+                maximum=numberset[i];
+            }
+         }
+         /* minimum in the given number set */
+        minimum=numberset[0];
+        for(i=1;i<setlength;i++)
+        {
+            if(numberset[i]<minimum)
+            {
+                minimum=numberset[i];
+            }
+        }
+        s.min=minimum;
+        s.max=maximum;
+    
+        /* Finding Average of the given number set */
+        for(i=0;i<setlength;i++)
+        {
+            sum+=numberset[i];
+         }
+        s.average=sum/setlength;
     }
-    s.average=sum/setlength;
-    return s;
+     return s;
 }
 
 int emailAlertCallCount = 0;
