@@ -9,7 +9,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     float sum=0.0;
     /* maximum in the given number set */
     maximum=numberset[0];
-    for(i=0;i<setlength;i++)
+    for(i=1;i<setlength;i++)
     {
        if(numberset[i]>maximum)
        {
@@ -18,7 +18,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     }
     /* minimum in the given number set */
     minimum=numberset[0];
-    for(i=0;i<setlength;i++)
+    for(i=1;i<setlength;i++)
     {
        if(numberset[i]<minimum)
        {
