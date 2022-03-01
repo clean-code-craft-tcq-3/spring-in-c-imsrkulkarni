@@ -15,7 +15,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
             if(numberset[i]>numberset[j])
             {
                 temp=numberset[i];
-                numberset[i]=number[j];
+                numberset[i]=numberset[j];
                 numberset[j]=temp;
             }
          }
